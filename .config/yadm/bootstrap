@@ -1,0 +1,18 @@
+#!/bin/bash
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Linux" ]; then
+  # Ghostty on Linux expects config at ~/.config/ghostty/config
+  # yadm checks out the file at the macOS path on all OSes
+  ghostty_source="$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+  ghostty_target="$HOME/.config/ghostty/config"
+
+  if [ -f "$ghostty_source" ] && [ ! -e "$ghostty_target" ]; then
+    mkdir -p "$(dirname "$ghostty_target")"
+    ln -s "$ghostty_source" "$ghostty_target"
+    echo "Linked Ghostty config: $ghostty_target -> $ghostty_source"
+  elif [ -L "$ghostty_target" ]; then
+    echo "Ghostty config symlink already exists, skipping"
+  fi
+fi
