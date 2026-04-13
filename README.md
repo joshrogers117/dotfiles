@@ -53,7 +53,7 @@ curl -sS https://starship.rs/install.sh | sh
 sudo apt install -y yadm
 
 # Clone dotfiles (yadm auto-selects the Linux .zshrc and runs bootstrap)
-yadm clone git@github.com:joshferrara/dotfiles.git
+yadm clone git@github.com:joshrogers117/dotfiles.git
 yadm bootstrap
 
 # Install fzf-tab
