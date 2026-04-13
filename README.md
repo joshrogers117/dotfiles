@@ -21,7 +21,7 @@ brew install yadm tmux starship carapace fzf
 brew install --cask font-jetbrains-mono-nerd-font
 
 # Clone dotfiles
-yadm clone git@github.com:joshferrara/dotfiles.git
+yadm clone git@github.com:joshrogers117/dotfiles.git
 
 # If any files aren't placed correctly
 yadm checkout -- .
